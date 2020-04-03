@@ -23,7 +23,7 @@ for line in sys.stdin:
 endef
 export PRINT_HELP_PYSCRIPT
 
-BROWSER := python -c "$$BROWSER_PYSCRIPT"
+BROWSER := python3 -c "$$BROWSER_PYSCRIPT"
 
 .PHONY: help
 help:
@@ -31,15 +31,15 @@ help:
 
 .PHONY: install
 install: clean-build clean-pyc ## install the package to the active Python's site-packages
-	pip install .
+	pip3 install .
 
 .PHONY: install-test
 install-test: clean-build clean-pyc ## install the package and test dependencies
-	pip install .[test]
+	pip3 install .[test]
 
 .PHONY: test
 test: ## run tests quickly with the default Python
-	python -m pytest --basetemp=${ENVTMPDIR} --cov=task_geo
+	python3 -m pytest --basetemp=${ENVTMPDIR} --cov=task_geo
 
 .PHONY: lint
 lint: ## check style with flake8 and isort
@@ -48,7 +48,7 @@ lint: ## check style with flake8 and isort
 
 .PHONY: install-develop
 install-develop: clean-build clean-pyc ## install the package in editable mode and dependencies for development
-	pip install -e .[dev]
+	pip3 install -e .[dev]
 
 .PHONY: test-all
 test-all: ## run tests on every Python version with tox
@@ -82,8 +82,8 @@ serve-docs: view-docs ## compile the docs watching for changes
 
 .PHONY: dist
 dist: clean ## builds source and wheel package
-	python setup.py sdist
-	python setup.py bdist_wheel
+	python3 setup.py sdist
+	python3 setup.py bdist_wheel
 	ls -l dist
 
 
@@ -97,7 +97,7 @@ clean-build: ## remove build artifacts
 	rm -fr dist/
 	rm -fr .eggs/
 	find . -name '*.egg-info' -exec rm -fr {} +
-	find . -name '*.egg' -exec rm -f {} +
+	find . -name '*.egg' -exec rm -fr {} +
 
 .PHONY: clean-pyc
 clean-pyc: ## remove Python file artifacts
