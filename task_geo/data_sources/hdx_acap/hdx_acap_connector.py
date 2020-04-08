@@ -37,11 +37,12 @@ def hdx_acap_connector():
                 resources[0]['revision_last_updated'])
     logger.info('Size: %sMb', resources[0]['size'] / (1024 ** 2))
     logger.info('Dataset Url: %s', resources[0]['url'])
-    logger.info('Tags: %s', dataset.get_tags())
+    tags = dataset.get_tags()
+    logger.info('Tags: %s', tags)
     resource = Resource.read_from_hdx(resources[0]['id'])
     url, absolute_path = resource.download('./')
     logger.info('Downloaded dataset at path: %s', absolute_path)
     xl = pd.ExcelFile(absolute_path)
     logger.info(xl.sheet_names)
     df = xl.parse('Database')
-    return df
+    return df, resources[0], tags
