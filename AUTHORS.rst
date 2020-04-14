@@ -30,9 +30,9 @@ http://doi.org/10.7289/V5D21VHZ [2020/03/30].
 HDX Data Source
 ***************
 
-The [**ACAPS COVID-19: Government Measures Dataset**](https://data.humdata.org/dataset/acaps-covid19-government-measures-dataset)
-is added on the [Humanitarian Data Exchange](https://data.humdata.org) website and we acknowledge the
-[ACAPS](https://www.acaps.org/) organization for the effort they put into collecting and updating their dataset regularly
+- The (**ACAPS COVID-19: Government Measures Dataset**)[https://data.humdata.org/dataset/acaps-covid19-government-measures-dataset] is added on the [Humanitarian Data Exchange](https://data.humdata.org) website and we acknowledge the [ACAPS](https://www.acaps.org/) organization for the effort they put into collecting and updating their dataset regularly
+
+- Hale, Thomas, Sam Webster, Anna Petherick, Toby Phillips, and Beatriz Kira. (2020). Oxford COVID-19 Government Response Tracker. Data use policy: Creative Commons Attribution CC BY standard.
 
 Special Thanks
 --------------
