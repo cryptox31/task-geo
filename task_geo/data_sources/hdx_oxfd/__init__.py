@@ -1,32 +1,16 @@
-from task_geo.data_sources.hdx.hdx_connector import hdx_acap_connector, hdx_oxfd_connector
-from task_geo.data_sources.hdx.hdx_formatter import hdx_acap_formatter, hdx_oxfd_formatter
+from task_geo.data_sources.hdx_oxfd.hdx_oxfd_connector import hdx_oxfd_connector
+from task_geo.data_sources.hdx_oxfd.hdx_oxfd_formatter import hdx_oxfd_formatter
 
 
-def hdx_acap():
-    """Retrieves formatted Government Measures Dataset from HDX DataSource
-    Example:
-    >>> hdx_acap()
-
-    Returns: pandas.DataFrame
-    """
-    raw = hdx_acap_connector()
-    return hdx_acap_formatter(raw)
-
-
-def hdx_oxfd(from_date, to_date, country_iso2):
+def hdx_oxfd(start_date=None, end_date=None, country_iso2=None):
     """Retrieves formatted Oxford COVID-19 Government Response Tracker Dataset from HDX DataSource
-    Example:
-    >>> hdx_oxfd()
+    Examples:
+    >>> df = hdx_oxfd("2020-03-01", "2020-03-30", ["US"])
+    >>> df1 = hdx_oxfd("2020-04-01", None, None)
+    >>> df2 = hdx_oxfd("2020-04-01", None, ["US"])
 
     Returns: pandas.DataFrame
     """
-    raw = hdx_oxfd_connector()
-    return hdx_oxfd_formatter(raw)
-
-
-def main():
-    hdx_oxfd()
-
-
-if __name__ == '__main__':
-    main()
+    raw, metadata, keywords = hdx_oxfd_connector()
+    df = hdx_oxfd_formatter(raw, start_date, end_date, country_iso2)
+    return df

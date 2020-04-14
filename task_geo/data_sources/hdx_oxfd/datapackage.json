@@ -1,0 +1,169 @@
+{
+    "profile": "tabular-data-package",
+    "resources": [
+        {
+            "path": "Stringency Index.csv",
+            "profile": "tabular-data-resource",
+            "name": "Stringency Index",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "encoding": "utf-8",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "",
+                        "type": "integer",
+                        "format": "default"
+                    },
+                    {
+                        "name": "country",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "country_iso2",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "date",
+                        "type": "date",
+                        "format": "default"
+                    },
+                    {
+                        "name": "s1_school closing",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "s1_isgeneral",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "s2_workplace closing",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "s2_isgeneral",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "s3_cancel public events",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "s3_isgeneral",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "s4_close public transport",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "s4_isgeneral",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "s5_public information campaigns",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "s5_isgeneral",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "s6_restrictions on internal movement",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "s6_isgeneral",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "s7_international travel controls",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "s8_fiscal measures",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "s9_monetary measures",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "s10_emergency investment in health care",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "s11_investment in vaccines",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "s12_testing framework",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "s13_contact tracing",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "confirmedcases",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "confirmeddeaths",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "stringencyindex",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "stringencyindexfordisplay",
+                        "type": "number",
+                        "format": "default"
+                    }
+                ],
+                "missingValues": [
+                    ""
+                ]
+            }
+        }
+    ],
+    "id": "45331aaa-e651-4a16-a8a0-92a51b3734c0",
+    "size": 265019,
+    "revision_last_updated": "2020-04-14T10:03:25.204286",
+    "last_modified": "2020-04-08T13:36:10.652755",
+    "created": "2020-04-03T08:47:53.859260",
+    "description": "",
+    "name": "COVID-19_governmentresponse_stringencyindex",
+    "url": "https://ocgptweb.azurewebsites.net/CSVDownload",
+    "download_url": "https://ocgptweb.azurewebsites.net/CSVDownload",
+    "keywords": [
+        "covid-19",
+        "government data",
+        "hxl"
+    ]
+}
