@@ -1,7 +1,9 @@
 import logging
-from task_geo.common.country_codes import iso3_to_iso2, iso2_to_iso3
 from datetime import datetime
+
 import pandas as pd
+
+from task_geo.common.country_codes import iso2_to_iso3, iso3_to_iso2
 
 logger = logging.getLogger(__name__)
 
