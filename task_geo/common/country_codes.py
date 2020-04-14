@@ -537,7 +537,7 @@ ISO3_TO_ISO2_MAP = {'AFG': 'AF', 'ALA': 'AX', 'ALB': 'AL', 'DZA': 'DZ', 'ASM': '
                     'USA': 'US', 'UMI': 'UM', 'URY': 'UY', 'UZB': 'UZ', 'VUT': 'VU', 'VEN': 'VE',
                     'VNM': 'VN',
                     'VGB': 'VG', 'VIR': 'VI', 'WLF': 'WF', 'ESH': 'EH', 'YEM': 'YE', 'ZMB': 'ZM',
-                    'ZWE': 'ZW'}
+                    'ZWE': 'ZW', 'PRK': 'KP', 'SSD': 'SS'}
 ISO2_TO_ISO3_MAP = {'AF': 'AFG', 'AX': 'ALA', 'AL': 'ALB', 'DZ': 'DZA', 'AS': 'ASM', 'AD': 'AND',
                     'AO': 'AGO', 'AI': 'AIA', 'AQ': 'ATA', 'AG': 'ATG', 'AR': 'ARG', 'AM': 'ARM',
                     'AW': 'ABW', 'AU': 'AUS', 'AT': 'AUT', 'AZ': 'AZE', 'BS': 'BHS', 'BH': 'BHR',
@@ -578,11 +578,14 @@ ISO2_TO_ISO3_MAP = {'AF': 'AFG', 'AX': 'ALA', 'AL': 'ALB', 'DZ': 'DZA', 'AS': 'A
                     'TN': 'TUN', 'TR': 'TUR', 'TM': 'TKM', 'TC': 'TCA', 'TV': 'TUV', 'UG': 'UGA',
                     'UA': 'UKR', 'AE': 'ARE', 'GB': 'GBR', 'US': 'USA', 'UM': 'UMI', 'UY': 'URY',
                     'UZ': 'UZB', 'VU': 'VUT', 'VE': 'VEN', 'VN': 'VNM', 'VG': 'VGB', 'VI': 'VIR',
-                    'WF': 'WLF', 'EH': 'ESH', 'YE': 'YEM', 'ZM': 'ZMB', 'ZW': 'ZWE'}
+                    'WF': 'WLF', 'EH': 'ESH', 'YE': 'YEM', 'ZM': 'ZMB', 'ZW': 'ZWE', 'KP': 'PRK',
+                    'SS': 'SSD'}
 
 
 def iso3_to_iso2(country_iso3):
     """Converts iso3 to iso2 country codes
+
+    See Also: https://www.iban.com/country-codes
 
     Args:
         country_iso3 : str
@@ -596,6 +599,8 @@ def iso3_to_iso2(country_iso3):
 
 def iso2_to_iso3(country_iso2):
     """Converts iso2 to iso3 country codes
+
+    See Also: https://www.iban.com/country-codes
 
     Args:
         country_iso2 : str
