@@ -16,7 +16,7 @@ class TestHdxApi(TestCase):
         start_date = datetime(2020, 1, 1).date().isoformat()
         end_date = datetime(2020, 2, 15).date().isoformat()
         countries = ["AW"]
-        raw = pd.read_csv('../../fixtures/hdx_oxfd_fixture.csv')
+        raw = pd.read_csv('tests/fixtures/hdx_oxfd_fixture.csv')
 
         # Run
         data = hdx_oxfd_formatter(raw, start_date, end_date, countries)

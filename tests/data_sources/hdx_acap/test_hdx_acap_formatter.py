@@ -12,7 +12,7 @@ class TestHdxApi(TestCase):
         """Validate Output of datasource
         """
         # Setup
-        raw = pd.read_csv('../../fixtures/hdx_acap_fixture.csv')
+        raw = pd.read_csv('tests/fixtures/hdx_acap_fixture.csv')
 
         # Run
         data = hdx_acap_formatter(raw)
