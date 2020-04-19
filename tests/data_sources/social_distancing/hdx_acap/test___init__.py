@@ -7,7 +7,6 @@ from task_geo.testing import check_dataset_format
 
 class TestHdxApi(TestCase):
 
-
     def test_validate_format_raw_output(self):
         """Validate datasource output.
 
