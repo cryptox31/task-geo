@@ -10,8 +10,7 @@ from task_geo.testing import check_dataset_format
 class TestHdxApi(TestCase):
 
     def test_validate_formatter(self):
-        """Validate datasource output.
-        """
+        """Validate datasource output."""
         # Setup
         start_date = datetime(2020, 1, 1).date().isoformat()
         end_date = datetime(2020, 2, 15).date().isoformat()

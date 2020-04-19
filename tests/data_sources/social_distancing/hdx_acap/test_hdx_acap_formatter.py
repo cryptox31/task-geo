@@ -9,8 +9,7 @@ from task_geo.testing import check_dataset_format
 class TestHdxApi(TestCase):
 
     def test_validate_formatter(self):
-        """Validate Output of datasource
-        """
+        """Validate Output of datasource."""
         # Setup
         raw = pd.read_csv('tests/fixtures/hdx_acap_fixture.csv')
 
