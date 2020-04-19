@@ -1,5 +1,5 @@
-from task_geo.data_sources.hdx_oxfd.hdx_oxfd_connector import hdx_oxfd_connector
-from task_geo.data_sources.hdx_oxfd.hdx_oxfd_formatter import hdx_oxfd_formatter
+from task_geo.data_sources.social_distancing.hdx_oxfd import hdx_oxfd_connector
+from task_geo.data_sources.social_distancing.hdx_oxfd.hdx_oxfd_formatter import hdx_oxfd_formatter
 
 
 def hdx_oxfd(start_date=None, end_date=None, country_iso2=None):

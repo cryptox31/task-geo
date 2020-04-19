@@ -1,14 +1,13 @@
 from datetime import datetime
-from unittest import TestCase, skip
+from unittest import TestCase
 
-from task_geo.data_sources.hdx_oxfd.hdx_oxfd_connector import hdx_oxfd_connector
-from task_geo.data_sources.hdx_oxfd.hdx_oxfd_formatter import hdx_oxfd_formatter
+from task_geo.data_sources.social_distancing.hdx_oxford import hdx_oxford_connector
+from task_geo.data_sources.social_distancing.hdx_oxford.hdx_oxford_formatter import hdx_oxford_formatter
 from task_geo.testing import check_dataset_format
 
 
 class TestHdxApi(TestCase):
 
-    @skip
     def test_validate_format_raw_output(self):
         """Validate datasource output.
 
@@ -19,10 +18,10 @@ class TestHdxApi(TestCase):
         start_date = datetime(2020, 3, 1).date().isoformat()
         end_date = datetime(2020, 3, 15).date().isoformat()
         countries = ['US']
-        raw = hdx_oxfd_connector()
+        raw = hdx_oxford_connector()
 
         # Run
-        data = hdx_oxfd_formatter(raw, start_date, end_date, countries)
+        data = hdx_oxford_formatter(raw, start_date, end_date, countries)
 
         # Check.
         check_dataset_format(data)
