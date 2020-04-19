@@ -15,9 +15,9 @@ def hdx_acap_formatter(raw):
     data = raw.copy()
     data.columns = [column.lower() for column in data.columns]
     data = data.drop(['pcode', 'admin_level_name', 'alternative source'], axis=1)
-    column_order = ['id', 'country', 'country_iso2', 'log_type', 'category', 'measure',
+    column_order = ['id', 'country', 'country_iso', 'log_type', 'category', 'measure',
                     'targeted_pop_group', 'comments', 'non_compliance', 'date_implemented',
                     'source', 'source_type', 'entry_date', 'link']
     # Convert ISO3 Country code to ISO2 Country Code
-    data['country_iso2'] = data.iso.apply(iso3_to_iso2)
+    data['country_iso'] = data.iso.apply(iso3_to_iso2)
     return data[column_order]

@@ -19,11 +19,11 @@ def hdx_oxford_formatter(raw):
     drop_columns = [column for column in data.columns if column.find("_note") > -1]
     data = data.drop(drop_columns, axis=1)
     # Convert ISO3 Country code to ISO2 Country Code
-    data['country_iso2'] = data.countrycode.apply(iso3_to_iso2)
+    data['country_iso'] = data.countrycode.apply(iso3_to_iso2)
     # Rename Column
     data.rename(columns={"countryname": "country"}, inplace=True)
     # Reorder Columns
-    column_order = ['country', 'country_iso2', 'date', 's1_school closing',
+    column_order = ['country', 'country_iso', 'date', 's1_school closing',
                     's1_isgeneral', 's2_workplace closing', 's2_isgeneral',
                     's3_cancel public events', 's3_isgeneral', 's4_close public transport',
                     's4_isgeneral', 's5_public information campaigns', 's5_isgeneral',
