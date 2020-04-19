@@ -1,7 +1,8 @@
 from unittest import TestCase
 
 from task_geo.data_sources.social_distancing.hdx_oxford import hdx_oxford_connector
-from task_geo.data_sources.social_distancing.hdx_oxford.hdx_oxford_formatter import hdx_oxford_formatter
+from task_geo.data_sources.social_distancing.hdx_oxford.hdx_oxford_formatter import (
+    hdx_oxford_formatter)
 from task_geo.testing import check_dataset_format
 
 

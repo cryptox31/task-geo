@@ -4,7 +4,6 @@ hdx : Humanitarian Data Exchange
 """
 import logging
 
-import pandas as pd
 from hdx.data.dataset import Dataset
 from hdx.data.resource import Resource
 from hdx.hdx_configuration import Configuration
@@ -23,7 +22,7 @@ def hdx_connector(data_source_name):
         path(str): Path at which the dataset is downloaded
 
     """
-    logger.setLevel('NOTSET') # Can turn to 'DEBUG' for debug level
+    logger.setLevel('NOTSET')  # Can turn to 'DEBUG' for debug level
     setup_logging()
 
     Configuration.create(hdx_site='prod', user_agent='CoronaWhy', hdx_read_only=True)

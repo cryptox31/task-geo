@@ -5,6 +5,7 @@ acap: Organization providing the dataset
 import logging
 
 import pandas as pd
+
 from task_geo.data_sources.social_distancing.hdx_connector.hdx_connector import hdx_connector
 
 logger = logging.getLogger(__name__)

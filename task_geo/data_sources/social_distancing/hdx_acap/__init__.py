@@ -16,7 +16,3 @@ def hdx_acap():
     """
     raw = hdx_acap_connector()
     return hdx_acap_formatter(raw)
-
-
-if __name__ == '__main__':
-    hdx_acap()
