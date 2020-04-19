@@ -1,8 +1,4 @@
-import logging
-
 from task_geo.common.country_codes import iso3_to_iso2
-
-logger = logging.getLogger(__name__)
 
 
 def hdx_acap_formatter(raw):
@@ -19,13 +15,9 @@ def hdx_acap_formatter(raw):
     data = raw.copy()
     data.columns = [column.lower() for column in data.columns]
     data = data.drop(['pcode', 'admin_level_name', 'alternative source'], axis=1)
-    column_order = ['id', 'country', 'region', 'country_iso2', 'category', 'measure',
+    column_order = ['id', 'country', 'country_iso2', 'log_type', 'category', 'measure',
                     'targeted_pop_group', 'comments', 'non_compliance', 'date_implemented',
                     'source', 'source_type', 'entry_date', 'link']
     # Convert ISO3 Country code to ISO2 Country Code
-    if len(data) > 0:
-        data['country_iso2'] = data.apply(lambda x: iso3_to_iso2(x['iso']), axis=1)
-    else:
-        return data
-    data = data[column_order]
-    return data
+    data['country_iso2'] = data.iso.apply(iso3_to_iso2)
+    return data[column_order]
