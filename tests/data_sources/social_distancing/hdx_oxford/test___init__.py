@@ -1,4 +1,3 @@
-from datetime import datetime
 from unittest import TestCase
 
 from task_geo.data_sources.social_distancing.hdx_oxford import hdx_oxford_connector
@@ -15,13 +14,10 @@ class TestHdxApi(TestCase):
         Is kept for developing porpouses.
         """
         # Setup
-        start_date = datetime(2020, 3, 1).date().isoformat()
-        end_date = datetime(2020, 3, 15).date().isoformat()
-        countries = ['US']
         raw = hdx_oxford_connector()
 
         # Run
-        data = hdx_oxford_formatter(raw, start_date, end_date, countries)
+        data = hdx_oxford_formatter(raw)
 
         # Check.
         check_dataset_format(data)
