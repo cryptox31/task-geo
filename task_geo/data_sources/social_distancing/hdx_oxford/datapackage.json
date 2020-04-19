@@ -152,11 +152,11 @@
             }
         }
     ],
-    "id": "45331aaa-e651-4a16-a8a0-92a51b3734c0",
+    "id": "",
     "size": 265019,
-    "revision_last_updated": "2020-04-14T10:03:25.204286",
-    "last_modified": "2020-04-08T13:36:10.652755",
-    "created": "2020-04-03T08:47:53.859260",
+    "data_source_revision_last_updated": "2020-04-14T10:03:25.204286",
+    "data_source_last_modified": "2020-04-08T13:36:10.652755",
+    "data_source_created": "2020-04-03T08:47:53.859260",
     "description": "",
     "name": "COVID-19_governmentresponse_stringencyindex",
     "url": "https://ocgptweb.azurewebsites.net/CSVDownload",
