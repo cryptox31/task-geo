@@ -21,7 +21,8 @@ install_requires = [
     'pandas',
     'requests',
     'jupyter',
-    'hdx-python-api'
+    'hdx-python-api',
+    'country_converter'
 ]
 
 setup_requires = [
