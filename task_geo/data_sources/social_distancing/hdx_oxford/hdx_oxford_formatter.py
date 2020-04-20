@@ -1,5 +1,6 @@
-from task_geo.common.country_codes import iso3_to_iso2
 import pandas as pd
+
+from task_geo.common.country_codes import iso3_to_iso2
 
 
 def hdx_oxford_formatter(raw):
