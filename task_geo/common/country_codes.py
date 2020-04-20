@@ -1,6 +1,5 @@
-import pandas as pd
-
 import country_converter as coco
+import pandas as pd
 
 FIPS_CODES_COUNTRY_NAME_MAP = {
     'AC': 'Antigua and Barbuda',
@@ -585,36 +584,34 @@ ISO2_TO_ISO3_MAP = {'AF': 'AFG', 'AX': 'ALA', 'AL': 'ALB', 'DZ': 'DZA', 'AS': 'A
                     'WF': 'WLF', 'EH': 'ESH', 'YE': 'YEM', 'ZM': 'ZMB', 'ZW': 'ZWE', 'KP': 'PRK',
                     'SS': 'SSD', 'XK': 'RKS'}
 
-COUNTRY_CODES = pd.read_csv('country_codes.csv')
-
 
 def iso3_to_iso2(country_iso3):
     """Converts iso3 to iso2 country codes
 
-    See Also: https://www.iban.com/country-codes
+        See Also: https://www.iban.com/country-codes
 
-    Args:
-        country_iso3 : str
+        Args:
+            country_iso3 : str
 
-    Returns:
-        str
+        Returns:
+            str
 
-    """
+        """
     return ISO3_TO_ISO2_MAP[country_iso3]
 
 
 def iso2_to_iso3(country_iso2):
     """Converts iso2 to iso3 country codes
 
-    See Also: https://www.iban.com/country-codes
+        See Also: https://www.iban.com/country-codes
 
-    Args:
-        country_iso2 : str
+        Args:
+            country_iso2 : str
 
-    Returns:
-        str
+        Returns:
+            str
 
-    """
+        """
     return ISO2_TO_ISO3_MAP[country_iso2]
 
 
@@ -656,6 +653,7 @@ def translate_code(value, input, output):
         str
 
     """
+    COUNTRY_CODES = pd.read_csv('task_geo/common/country_codes.py')
     # This lookup should work, but the .values[0] is not very elegant,
     # if you find a way to improve it, please go ahead.
     return COUNTRY_CODES[COUNTRY_CODES[input] == value][output].values[0]

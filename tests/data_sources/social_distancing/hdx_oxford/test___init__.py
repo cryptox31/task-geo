@@ -1,4 +1,4 @@
-from unittest import TestCase
+from unittest import TestCase, skip
 
 from task_geo.data_sources.social_distancing.hdx_oxford import hdx_oxford_connector
 from task_geo.data_sources.social_distancing.hdx_oxford.hdx_oxford_formatter import (
@@ -6,6 +6,7 @@ from task_geo.data_sources.social_distancing.hdx_oxford.hdx_oxford_formatter imp
 from task_geo.testing import check_dataset_format
 
 
+@skip
 class TestHdxApi(TestCase):
 
     def test_validate_format_raw_output(self):
