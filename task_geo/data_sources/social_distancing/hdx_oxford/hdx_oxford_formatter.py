@@ -1,4 +1,5 @@
 from task_geo.common.country_codes import iso3_to_iso2
+import pandas as pd
 
 
 def hdx_oxford_formatter(raw):
@@ -20,6 +21,8 @@ def hdx_oxford_formatter(raw):
     data = data.drop(drop_columns, axis=1)
     # Convert ISO3 Country code to ISO2 Country Code
     data['country_iso'] = data.countrycode.apply(iso3_to_iso2)
+    # Format date column to datetime dtype
+    data['date'] = pd.to_datetime(data['date'], format='%Y%m%d')
     # Rename Column
     data.rename(columns={"countryname": "country"}, inplace=True)
     # Reorder Columns

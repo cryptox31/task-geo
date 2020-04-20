@@ -132,6 +132,9 @@ https://data.humdata.org/dataset/oxford-covid-19-government-response-tracker
 ## Transformations applied
 
 - Removed columns with notes
+- Changed column names to lower case
 - Converted ISO3 country code to ISO2 country code
 - Renamed columns
+    - CountryCode -> country_iso
+    - CountryName -> country
 
