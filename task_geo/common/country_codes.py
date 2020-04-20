@@ -1,3 +1,7 @@
+import pandas as pd
+
+import country_converter as coco
+
 FIPS_CODES_COUNTRY_NAME_MAP = {
     'AC': 'Antigua and Barbuda',
     'AE': 'United Arab Emirates',
@@ -581,6 +585,8 @@ ISO2_TO_ISO3_MAP = {'AF': 'AFG', 'AX': 'ALA', 'AL': 'ALB', 'DZ': 'DZA', 'AS': 'A
                     'WF': 'WLF', 'EH': 'ESH', 'YE': 'YEM', 'ZM': 'ZMB', 'ZW': 'ZWE', 'KP': 'PRK',
                     'SS': 'SSD', 'XK': 'RKS'}
 
+COUNTRY_CODES = pd.read_csv('country_codes.csv')
+
 
 def iso3_to_iso2(country_iso3):
     """Converts iso3 to iso2 country codes
@@ -619,3 +625,42 @@ def iso2_to_name(country_iso2):
 def fips_to_name(fips_code):
     name = FIPS_CODES_COUNTRY_NAME_MAP.get(fips_code)
     return name.split(' [')[0]
+
+
+def create_country_code_csv():
+    _country_to_all_list = list()
+    for key in FIPS_CODES_COUNTRY_NAME_MAP:
+        _country_to_all_list.append([FIPS_CODES_COUNTRY_NAME_MAP[key], key,
+                                     coco.convert(names=fips_to_name(key),
+                                                  to='iso3', not_found=None),
+                                     coco.convert(names=fips_to_name(key),
+                                                  to='iso2', not_found=None)])
+    print(_country_to_all_list)
+    df = pd.DataFrame(_country_to_all_list, columns=['country', 'fips', 'iso3', 'iso2'])
+    df.to_csv('./country_codes.csv', index=False, header=True)
+
+
+def translate_code(value, input, output):
+    """Translate code `value` from `input` format to `output`.
+
+    Arguments:
+        value(str): Value to translate.
+        input(str): Format the value is in, possible values are:
+                                                    ['name', 'iso2', 'iso3','fips']
+       output(str): Format the value should be returned, possible values are:
+                                                    ['name', 'iso2', 'iso3','fips']
+
+    Examples:
+        >>> translate_code('US', 'iso2', 'iso3')
+    Returns:
+        str
+
+    """
+    # This lookup should work, but the .values[0] is not very elegant,
+    # if you find a way to improve it, please go ahead.
+    return COUNTRY_CODES[COUNTRY_CODES[input] == value][output].values[0]
+
+
+if __name__ == '__main__':
+    create_country_code_csv()
+    print(translate_code('US', 'iso2', 'iso3'))
