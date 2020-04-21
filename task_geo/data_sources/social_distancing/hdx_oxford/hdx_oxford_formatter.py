@@ -27,14 +27,13 @@ def hdx_oxford_formatter(raw):
     # Rename Column
     data.rename(columns={"countryname": "country"}, inplace=True)
     # Reorder Columns
-    column_order = ['country', 'country_iso', 'date', 's1_school closing',
-                    's1_isgeneral', 's2_workplace closing', 's2_isgeneral',
-                    's3_cancel public events', 's3_isgeneral', 's4_close public transport',
-                    's4_isgeneral', 's5_public information campaigns', 's5_isgeneral',
-                    's6_restrictions on internal movement', 's6_isgeneral',
-                    's7_international travel controls', 's8_fiscal measures',
-                    's9_monetary measures', 's10_emergency investment in health care',
-                    's11_investment in vaccines', 's12_testing framework',
-                    's13_contact tracing', 'confirmedcases', 'confirmeddeaths',
-                    'stringencyindex', 'stringencyindexfordisplay']
+    column_order = [
+        'country', 'country_iso', 'date', 's1_school closing', 's1_isgeneral',
+        's2_workplace closing', 's2_isgeneral', 's3_cancel public events', 's3_isgeneral',
+        's4_close public transport', 's4_isgeneral', 's5_public information campaigns',
+        's5_isgeneral', 's6_restrictions on internal movement', 's6_isgeneral',
+        's7_international travel controls', 's8_fiscal measures', 's9_monetary measures',
+        's10_emergency investment in health care', 's11_investment in vaccines',
+        's12_testing framework', 's13_contact tracing', 'confirmedcases', 'confirmeddeaths',
+        'stringencyindex', 'stringencyindexfordisplay']
     return data[column_order]
